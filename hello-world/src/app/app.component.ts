@@ -8,7 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   courses =[
     {id:1, name: 'course1'},
-    {id:2, name: 'course1'},
-    {id:3, name: 'course1'}
+    {id:2, name: 'course2'},
+    {id:3, name: 'course3'}
   ];
+
+  onAdd(){
+    this.courses.push({id: this.courses.length, name:'course' + (this.courses.length +1)});
+  }
+
+  onRemove(course){
+    let index = this.courses.indexOf(course);
+    this.courses.splice(index, 1);
+  }
+
+  onChange(course){
+    course.name = "Updated"
+  }
 }
