@@ -1,6 +1,6 @@
-<button (click)="onAdd()">Add</button>
+<button (click)="loadCourses()">Load Courses</button>
 <ul>
-    <li *ngFor="let course of courses; index as i; even as isEven">
-       {{i}} - {{course.name}} <button (click)="onChange(course)">Update</button>    <!--Remove-->
+    <li *ngFor="let course of courses; trackBy: trackCourse">
+       {{course.name}}
     </li>
 </ul>
